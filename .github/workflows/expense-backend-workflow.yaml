@@ -1,4 +1,4 @@
-name: feature-pipeline-frontend
+name: feature-pipeline-backend
 
 on: [push]
 permissions:
@@ -11,8 +11,8 @@ jobs:
     if: github.ref != 'refs/heads/main'
     uses: tata-actions/workflows/.github/workflows/feature-nodejs-pipeline.yaml@main
     with:
-      project: roboshop
-      component: frontend
+      project: expense-project
+      component: backend
       environment: dev
     secrets: inherit  
 
@@ -20,7 +20,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     uses: tata-actions/workflows/.github/workflows/dev-nodejs-pipeline.yaml@main
     with:
-      project: roboshop
-      component: frontend
+      project: expense-project
+      component: backend
       environment: dev
     secrets: inherit   
